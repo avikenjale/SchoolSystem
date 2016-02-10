@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <script>document.write('<base href="' + document.location + '" />');</script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- 1. Load libraries -->
@@ -12,6 +13,7 @@
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="node_modules/angular2/bundles/router.dev.js"></script>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
 
     <!-- 2. Configure SystemJS -->
@@ -34,13 +36,6 @@
             <h1>School System</h1>
         </div>
     </div>
-    <div class="container">
-        <ul class="nav nav-pills">
-            <li role="presentation" class="active"><a href="#">Students</a></li>
-            <li role="presentation"><a href="#">Teachers</a></li>
-            <li role="presentation"><a href="#">Classrooms</a></li>
-        </ul>
-        <app-component>Loading...</app-component>
-    </div>
+        <app-component>Loading...</app-component>      
 </body>
 </html>
