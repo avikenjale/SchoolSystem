@@ -1,0 +1,44 @@
+﻿<table class="table">
+    <thead>
+        <tr>
+            <th>##</th>
+            <th>Student ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date of Birth</th>
+            <th>Gender</th>
+        </tr>
+        <tr *ngFor="#Student of Students">
+            <td><img alt="Select" src="../../images/view_detail.png" (click)="selectStudent(Student.ID)"/></td>
+            <td>{{Student.ID}}</td>
+            <td>{{Student.FirstName}}</td>
+            <td>{{Student.LastName}}</td>
+            <td>{{Student.BirthDate}}</td>
+            <td>{{Student.Gender}}</td>
+        </tr>
+    </thead>
+</table>
+<div class="form-group-sm">
+    <label for="txtID">Student ID</label>
+    <input type="text" class="form-control" id="txtID" placeholder="Student ID" [(ngModel)]="MyStudent.ID">
+</div>
+<div class="form-group-sm">
+    <label for="txtFirstName">First Name</label>
+    <input type="text" class="form-control" id="txtFirstName" placeholder="First Name" [(ngModel)]="MyStudent.FirstName">
+</div>
+<div class="form-group-sm">
+    <label for="txtLastName">Last Name</label>
+    <input type="text" class="form-control" id="txtLastName" placeholder="Last Name" [(ngModel)]="MyStudent.LastName">
+</div>
+<div class="form-group-sm">
+    <label for="txtBirthDate">Birth Date</label>
+    <input type="date" class="form-control" id="txtBirthDate" placeholder="Date of Birth" [(ngModel)]="MyStudent.BirthDate">
+</div>
+<div class="form-group-sm">
+    <label for="txtGender">Gender</label>
+    <input type="text" class="form-control" id="txtGender" placeholder="Gender" [(ngModel)]="MyStudent.Gender">
+</div>
+<br />
+<div class="form-group-sm">
+    <button class="btn btn-default btn-sm" (click)="SaveStudent()">Save</button>
+</div>

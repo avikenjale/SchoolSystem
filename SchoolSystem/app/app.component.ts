@@ -5,7 +5,7 @@ import {TeacherComponent} from './teacher/teacher.component';
 
 @Component({
     selector: 'app-component',
-    templateUrl: 'app/app.component.html',
+    templateUrl: 'app/app.component.html',   
     directives: [ROUTER_DIRECTIVES]
 })
     @RouteConfig([
