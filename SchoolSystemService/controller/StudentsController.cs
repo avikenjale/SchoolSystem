@@ -1,6 +1,7 @@
 ﻿using SchoolSystemService.model;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -30,10 +31,10 @@ namespace SchoolSystemService.controller
         {
             _students = new List<Student>();
 
-            _students.Add(new Student() { ID = 1, FirstName = "Avinash", LastName = "Kenjale", BirthDate = Convert.ToDateTime("12-08-1982"), Gender = "Male" });
-            _students.Add(new Student() { ID = 2, FirstName = "Sampada", LastName = "Kasture", BirthDate = Convert.ToDateTime("10-05-1984"), Gender = "Female" });
-            _students.Add(new Student() { ID = 3, FirstName = "Aniket", LastName = "Kenjale", BirthDate = Convert.ToDateTime("04-17-1987"), Gender = "Male" });
-            _students.Add(new Student() { ID =4, FirstName = "Vishwapriya", LastName = "Chandratre", BirthDate = Convert.ToDateTime("05-08-1990"), Gender = "Female" });
+            _students.Add(new Student() { ID = 1, FirstName = "Avinash", LastName = "Kenjale", BirthDate = new DateTime(1982,12,08).ToString("yyyy-MM-dd", CultureInfo.InvariantCulture), Gender = "Male" });
+            _students.Add(new Student() { ID = 2, FirstName = "Sampada", LastName = "Kasture", BirthDate = new DateTime(1984,10,05).ToString("yyyy-MM-dd", CultureInfo.InvariantCulture), Gender = "Female" });
+            _students.Add(new Student() { ID = 3, FirstName = "Aniket", LastName = "Kenjale", BirthDate = Convert.ToDateTime("04-17-1987").ToString("yyyy-MM-dd", CultureInfo.InvariantCulture), Gender = "Male" });
+            _students.Add(new Student() { ID =4, FirstName = "Vishwapriya", LastName = "Chandratre", BirthDate = Convert.ToDateTime("05-08-1990").ToString("yyyy-MM-dd", CultureInfo.InvariantCulture), Gender = "Female" });
         }
 
         // GET: api/Students
@@ -43,9 +44,11 @@ namespace SchoolSystemService.controller
         }
 
         // GET: api/Students/5
-        public IEnumerable<Student> Get(int id)
+        public Student Get(int id)
         {
-            return Students.Where(s => s.ID == id);
+            IEnumerable<Student> student = Students.Where(s => s.ID == id);
+            return student.ElementAtOrDefault(0);           
+
         }        
 
         // POST: api/Students

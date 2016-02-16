@@ -11,7 +11,7 @@ import {Observable} from 'rxjs/Observable';;
 
 export class StudentComponent {
 
-    public Students: Student[];
+    public Students: Student[];    
     public MyStudent = new Student();
 
     constructor(private studentService: StudentService) {
@@ -28,8 +28,9 @@ export class StudentComponent {
             .subscribe(students => this.Students = students, error => this.studentService.logAndPassOn);
     }
 
-    public selectStudent()
+    public selectStudent(id: number)
     {
-
+        this.studentService.getStudent(id)
+            .subscribe(stundent => this.MyStudent = stundent, error => this.studentService.logAndPassOn);
     }
 }

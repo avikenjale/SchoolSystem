@@ -15,6 +15,13 @@ export class StudentService {
             .catch(this.logAndPassOn);
     }
 
+    public getStudent(id: number)
+    {
+        return this.http.get("http://localhost:22385/api/Students/" + id)
+            .map(res => <Student>res.json())
+            .catch(this.logAndPassOn);
+    }
+
     public addStudent(id: number, firstName: string, lastName: string, birthDate: string, gender: string) {
         let student = JSON.stringify({ ID: id, FirstName: firstName, LastName: lastName, BirthDate: birthDate, Gender: gender });
 
