@@ -1,0 +1,41 @@
+﻿<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date of Birth</th>
+            <th>Gender</th>
+        </tr>
+    </thead>
+    <tr *ngFor="#student of Students">
+        <td>{{student.ID}}</td>
+        <td>{{student.FirstName}}</td>
+        <td>{{student.LastName}}</td>
+        <td>{{student.BirthDate}}</td>
+        <td>{{student.Gender}}</td>
+    </tr>
+</table>
+<div class="form-group">
+    <label for="txtID">Student ID</label>
+    <input type="text" id="txtID" [(ngModel)]="ID" placeholder="Student ID" />
+</div>
+<div class="form-group">
+    <label for="txtFirstName">Frist Name</label>
+    <input type="text" id="txtFirstName" [(ngModel)]="FirstName" placeholder="First Name" />
+</div>
+<div class="form-group">
+    <label for="txtLastName">Last Name</label>
+    <input type="text" id="txtLastName" [(ngModel)]="LastName" placeholder="Last Name" />
+</div>
+<div class="form-group">
+    <label for="txtBirthDate">Date of Birth</label>
+    <input type="date" id="txtBirthDate" [(ngModel)]="BirthDate" placeholder="Date of Birth" />
+</div>
+<div class="form-group">
+    <label for="txtGender">gender</label>
+    <input type="text" id="txtGender" [(ngModel)]="Gender" placeholder="Gender" />
+</div>
+<div class="form-group">
+    <button type="button" class="btn btn-group" (click)="saveStudent()">Save</button>
+</div>
