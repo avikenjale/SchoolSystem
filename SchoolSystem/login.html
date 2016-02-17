@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        body {
+            background: #383e4b;
+            color: #383e4b;
+            border: 0;
+            font-family: 'Lato',sans-serif;
+            font-weight: 400;
+            margin: 0;
+            padding: 0;
+        }
+
+        .login-box {
+            width: 300px;
+            padding: 20px;
+            margin: 100px auto;
+            background: #fff;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+        }
+
+        fieldset {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            min-width: 0;
+        }
+
+        .login-box input[type="text"], .login-box input[type="password"] {
+            border: 0;
+            background: #e4e6eb;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            padding: 0 10px;
+            height: 40px;
+            margin: 5px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="row">
+                <div class="login-box">
+                    <form class="form-horizontal" action="index.html" method="post">
+                        <fieldset>
+                            <input class="input-large col-xs-12" name="username" id="username" type="text" placeholder="type username">
+                            <input class="input-large col-xs-12" name="password" id="password" type="password" placeholder="type password">
+                            <div class="clearfix"></div>
+                            <label class="remember" for="remember"><input type="checkbox" id="remember">Remember me</label>
+                            <div class="clearfix"></div>
+                            <button type="submit" class="btn btn-primary col-xs-12">Login</button>
+                        </fieldset>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
